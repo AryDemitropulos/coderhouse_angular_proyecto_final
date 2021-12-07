@@ -2,3 +2,15 @@
   text-indent: 2rem;
   text-align: justify;
 }
+.movie-title-container {
+  font-weight: 500;
+}
+.movie-title {
+  text-align: left;
+}
+
+.movie-text {
+  line-height: 16px;
+  font-size: 15px;
+  margin-top: 15px;
+}

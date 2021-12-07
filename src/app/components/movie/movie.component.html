@@ -5,18 +5,49 @@
     alt="..."
     (click)="toggleDetail()"
   />
-  <div class="card-body" (click)="toggleDetail()">
-    <div class="align-items-center d-flex justify-content-between">
-      <h5 class="card-title">{{ movie.name }}</h5>
-      <h5>{{ movie.price | currency }}</h5>
-    </div>
-    <div class="card-body" *ngIf="showDetail">
-      <p class="card-text movie-text">
-        {{ movie.detail.description }}
-      </p>
+  <div class="card-body">
+    <div class="d-flex justify-content-between movie-title-container">
+      <div class="movie-title mr-2">{{ movie.name }}</div>
+      <div>
+        <span class="badge rounded-pill bg-success">
+          {{ movie.price | currency }}
+        </span>
+      </div>
     </div>
   </div>
-
+  <div class="card-body" *ngIf="showDetail">
+    <div class="d-flex justify-content-between movie-title-container pb-1">
+      <div class="movie-title mr-2">
+        Duración: {{ movie.detail.duration }}min
+      </div>
+      <div>
+        <span class="badge rounded-pill bg-primary">
+          {{ movie.detail.category }}
+        </span>
+      </div>
+    </div>
+    <div class="movie-title-container">
+      <div
+        class="movie-title mr-2"
+        *ngFor="let person of movie.detail.personList"
+      >
+        {{ person.Type == "D" ? "Director" : "Actor" }}:
+        {{ person.Name }}
+      </div>
+    </div>
+    <p class="card-text movie-text">
+      {{ movie.detail.description }}
+    </p>
+  </div>
+  <div class="p-2">
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-primary"
+      (click)="toggleDetail()"
+    >
+      {{ showDetail ? "Menos" : "Más" }} información
+    </button>
+  </div>
   <div class="card-body">
     <button type="button" class="btn btn-primary" (click)="addToCart()">
       Agregar al carro

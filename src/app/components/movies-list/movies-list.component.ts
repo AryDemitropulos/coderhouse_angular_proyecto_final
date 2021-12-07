@@ -13,16 +13,29 @@ export class MoviesListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.movieList = moviesData.map(({ name, id, URLPoster, description }) => {
-      return {
+    this.movieList = moviesData.map(
+      ({
         name,
-        price: (Math.floor(Math.random() * 50) + 1).toString(),
         id,
-        img: URLPoster,
-        detail: {
-          description: description,
-        },
-      };
-    });
+        URLPoster,
+        description,
+        duration,
+        category,
+        personList,
+      }) => {
+        return {
+          name,
+          price: (Math.floor(Math.random() * 50) + 1).toString(),
+          id,
+          img: URLPoster,
+          detail: {
+            description: description,
+            duration,
+            category,
+            personList,
+          },
+        };
+      }
+    );
   }
 }
