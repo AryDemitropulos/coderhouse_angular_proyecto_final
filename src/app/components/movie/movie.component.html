@@ -1,1 +1,25 @@
-<p>movie works!</p>
+<div class="card text-center">
+  <img
+    [src]="movie.img"
+    class="card-img-top"
+    alt="..."
+    (click)="toggleDetail()"
+  />
+  <div class="card-body" (click)="toggleDetail()">
+    <div class="align-items-center d-flex justify-content-between">
+      <h5 class="card-title">{{ movie.name }}</h5>
+      <h5>{{ movie.price | currency }}</h5>
+    </div>
+    <div class="card-body" *ngIf="showDetail">
+      <p class="card-text movie-text">
+        {{ movie.detail.description }}
+      </p>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <button type="button" class="btn btn-primary" (click)="addToCart()">
+      Agregar al carro
+    </button>
+  </div>
+</div>

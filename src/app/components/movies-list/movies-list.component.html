@@ -1,1 +1,4 @@
-<p>movies-list works!</p>
+<h1>Lista de Peliculas</h1>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+  <app-movie *ngFor="let movie of movieList" [movie]="movie"></app-movie>
+</div>
