@@ -6,8 +6,8 @@
     (click)="toggleDetail()"
   />
   <div class="card-body">
-    <div class="d-flex justify-content-between movie-title-container">
-      <div class="movie-title mr-2">{{ movie.name }}</div>
+    <div class="d-flex justify-content-between fw-500">
+      <div class="text-start mr-2">{{ movie.name }}</div>
       <div>
         <span class="badge rounded-pill bg-success">
           {{ movie.price | currency }}
@@ -15,30 +15,12 @@
       </div>
     </div>
   </div>
-  <div class="card-body" *ngIf="showDetail">
-    <div class="d-flex justify-content-between movie-title-container pb-1">
-      <div class="movie-title mr-2">
-        Duración: {{ movie.detail.duration }}min
-      </div>
-      <div>
-        <span class="badge rounded-pill bg-primary">
-          {{ movie.detail.category }}
-        </span>
-      </div>
-    </div>
-    <div class="movie-title-container">
-      <div
-        class="movie-title mr-2"
-        *ngFor="let person of movie.detail.personList"
-      >
-        {{ person.Type == "D" ? "Director" : "Actor" }}:
-        {{ person.Name }}
-      </div>
-    </div>
-    <p class="card-text movie-text">
-      {{ movie.detail.description }}
-    </p>
-  </div>
+  <app-movie-details
+    class="card-body"
+    *ngIf="showDetail"
+    [detail]="movie.detail"
+  >
+  </app-movie-details>
   <div class="p-2">
     <button
       type="button"

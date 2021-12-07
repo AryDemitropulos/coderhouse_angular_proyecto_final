@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-between pb-1">
+  <div class="text-start fw-500 mr-2">Duración: {{ detail.duration }}min</div>
+  <div>
+    <span class="badge rounded-pill bg-primary">
+      {{ detail.category }}
+    </span>
+  </div>
+</div>
+<div class="movie-title-container">
+  <div class="text-start fw-500 mr-2" *ngFor="let person of detail.personList">
+    {{ person.Type == "D" ? "Director" : "Actor" }}:
+    {{ person.Name }}
+  </div>
+</div>
+<p class="card-text movie-text">
+  {{ detail.description }}
+</p>

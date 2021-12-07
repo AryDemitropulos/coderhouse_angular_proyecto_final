@@ -11,9 +11,10 @@ import { MovieComponent } from './components/movie/movie.component';
 import { AuthenticationComponent } from './views/authentication/authentication.component';
 import { HomeComponent } from './views/home/home.component';
 import { CartComponent } from './views/cart/cart.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent, MovieComponent, AuthenticationComponent, HomeComponent, CartComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent, MovieComponent, AuthenticationComponent, HomeComponent, CartComponent, MovieDetailsComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
