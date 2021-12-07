@@ -8,9 +8,10 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { AuthenticationComponent } from './views/authentication/authentication.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent, MovieComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent, MovieComponent, AuthenticationComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
