@@ -7,9 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent, MovieComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
