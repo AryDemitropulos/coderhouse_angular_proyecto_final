@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import moviesData from 'src/app/data/moviesData';
 import { Movie } from '../../interfaces/Movie';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -10,32 +11,9 @@ import { Movie } from '../../interfaces/Movie';
 export class MoviesListComponent implements OnInit {
   movieList: Movie[];
 
-  constructor() {}
+  constructor(public moviesService: MoviesService) {}
 
   ngOnInit(): void {
-    this.movieList = moviesData.map(
-      ({
-        name,
-        id,
-        URLPoster,
-        description,
-        duration,
-        category,
-        personList,
-      }) => {
-        return {
-          name,
-          price: (Math.floor(Math.random() * 50) + 1).toString(),
-          id,
-          img: URLPoster,
-          detail: {
-            description: description,
-            duration,
-            category,
-            personList,
-          },
-        };
-      }
-    );
+    this.movieList = this.moviesService.getMovies();
   }
 }
