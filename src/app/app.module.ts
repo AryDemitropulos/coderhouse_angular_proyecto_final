@@ -12,9 +12,10 @@ import { AuthenticationComponent } from './views/authentication/authentication.c
 import { HomeComponent } from './views/home/home.component';
 import { CartComponent } from './views/cart/cart.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { CartIconComponent } from './components/cart-icon/cart-icon.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent, MovieComponent, AuthenticationComponent, HomeComponent, CartComponent, MovieDetailsComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, SignUpComponent, MoviesListComponent, MovieComponent, AuthenticationComponent, HomeComponent, CartComponent, MovieDetailsComponent, CartIconComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
