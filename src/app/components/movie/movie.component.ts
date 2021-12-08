@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../interfaces/Movie';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-movie',
@@ -10,7 +11,7 @@ export class MovieComponent implements OnInit {
   @Input() movie: Movie;
   showDetail: boolean = false;
 
-  constructor() {}
+  constructor(public cartService: CartService) {}
 
   ngOnInit(): void {}
 
@@ -18,7 +19,11 @@ export class MovieComponent implements OnInit {
     this.showDetail = !this.showDetail;
   }
 
-  addToCart() {
-    console.log('Agregado al carro');
+  isMovieInCart() {
+    return this.cartService.isMovieInCart(this.movie.id);
+  }
+
+  togleMovieInCart() {
+    this.cartService.togleMovieInCart(this.movie.id);
   }
 }
