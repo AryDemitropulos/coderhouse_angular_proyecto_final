@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="login-container">
+  <img src="./assets/img/login.png" alt="" width="50%" />
+  <br />
+  <h1>Login</h1>
+  <mat-form-field appearance="fill" class="w80">
+    <mat-label>Usuario</mat-label>
+    <input
+      matInput
+      required
+      name="new-user"
+      id="new-user"
+      autocomplete="new-user"
+    />
+    <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w80">
+    <mat-label>Contraseña</mat-label>
+    <input
+      matInput
+      [type]="hidePassword ? 'password' : 'text'"
+      id="new-password"
+      autocomplete="new-password"
+    />
+
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hidePassword = !hidePassword"
+      [attr.aria-label]="'HidePassword password'"
+      [attr.aria-pressed]="hidePassword"
+    >
+      <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button class="w80" mat-raised-button color="primary">Ingresar</button>
+</div>
