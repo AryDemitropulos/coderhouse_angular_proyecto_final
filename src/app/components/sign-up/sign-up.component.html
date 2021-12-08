@@ -1,1 +1,46 @@
-<p>sign-up works!</p>
+<div class="mt30">
+  <mat-form-field appearance="fill" class="w80">
+    <mat-label>Nombre</mat-label>
+    <input
+      matInput
+      required
+      name="new-name"
+      id="new-name"
+      autocomplete="new-name"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w80">
+    <mat-label>Apellido</mat-label>
+    <input
+      matInput
+      required
+      name="new-lastname"
+      id="new-lastname"
+      autocomplete="new-lastname"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w80">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      required
+      type="email"
+      name="new-email"
+      id="new-email"
+      autocomplete="new-email"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w80">
+    <mat-label>Confirmar Email</mat-label>
+    <input
+      matInput
+      required
+      type="email"
+      name="new-email2"
+      id="new-email2"
+      autocomplete="new-email2"
+    />
+  </mat-form-field>
+
+  <button class="w80" mat-raised-button color="primary">Registrarse</button>
+</div>

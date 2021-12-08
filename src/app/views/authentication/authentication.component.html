@@ -1,3 +1,12 @@
 <div class="d-flex-center-center h100">
-  <app-login></app-login>
+  <div class="auth-container">
+    <img src="./assets/img/login.png" alt="" width="50%" />
+    <br />
+    <mat-tab-group>
+      <mat-tab label="Login">
+        <app-login></app-login>
+      </mat-tab>
+      <mat-tab label="Registrarse"> <app-sign-up></app-sign-up> </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

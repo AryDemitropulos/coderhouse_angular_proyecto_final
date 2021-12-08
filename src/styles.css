@@ -35,3 +35,11 @@ body {
 .w80 {
   width: 80%;
 }
+
+.pt30 {
+  padding-top: 30px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
