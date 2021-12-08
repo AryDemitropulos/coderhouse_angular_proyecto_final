@@ -1,33 +1,42 @@
 <div class="mt30">
-  <mat-form-field appearance="fill" class="w80">
-    <mat-label>Usuario</mat-label>
-    <input
-      matInput
-      required
-      name="new-user"
-      id="new-user"
-      autocomplete="new-user"
-    />
-    <mat-error *ngIf="true">dsadsadsadsa</mat-error>
-  </mat-form-field>
-  <mat-form-field appearance="fill" class="w80">
-    <mat-label>Contraseña</mat-label>
-    <input
-      matInput
-      [type]="hidePassword ? 'password' : 'text'"
-      id="new-password"
-      autocomplete="new-password"
-    />
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill" class="w80">
+      <mat-label>Usuario</mat-label>
+      <input
+        matInput
+        required
+        name="new-user"
+        id="new-user"
+        autocomplete="new-user"
+        formControlName="user"
+      />
+      <app-input-error [formControl]="user" label="Usuario"></app-input-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="w80">
+      <mat-label>Contraseña</mat-label>
+      <input
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+        id="new-password"
+        autocomplete="new-password"
+      />
 
-    <button
-      mat-icon-button
-      matSuffix
-      (click)="hidePassword = !hidePassword"
-      [attr.aria-label]="'HidePassword password'"
-      [attr.aria-pressed]="hidePassword"
-    >
-      <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
-    </button>
-  </mat-form-field>
-  <button class="w80" mat-raised-button color="primary">Ingresar</button>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword = !hidePassword"
+        [attr.aria-label]="'HidePassword password'"
+        [attr.aria-pressed]="hidePassword"
+      >
+        <mat-icon>{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+      <app-input-error
+        [formControl]="password"
+        label="contraseña"
+      ></app-input-error>
+    </mat-form-field>
+    <button class="w80" mat-raised-button color="primary">Ingresar</button>
+  </form>
 </div>

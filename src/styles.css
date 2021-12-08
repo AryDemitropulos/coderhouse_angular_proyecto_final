@@ -12,6 +12,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+mat-form-field {
+  margin-bottom: 15px;
+}
+
 .d-flex-center-between {
   display: flex;
   align-items: center;
