@@ -1,5 +1,5 @@
 <div class="mt30">
-  <form [formGroup]="form">
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <mat-form-field appearance="fill" class="w80">
       <mat-label>Usuario</mat-label>
       <input
@@ -10,7 +10,11 @@
         autocomplete="new-user"
         formControlName="user"
       />
-      <app-input-error [formControl]="user" label="Usuario"></app-input-error>
+      <app-input-error
+        ngDefaultControl
+        [formControl]="user"
+        label="Usuario"
+      ></app-input-error>
     </mat-form-field>
     <mat-form-field appearance="fill" class="w80">
       <mat-label>Contraseña</mat-label>
@@ -19,6 +23,7 @@
         [type]="hidePassword ? 'password' : 'text'"
         id="new-password"
         autocomplete="new-password"
+        formControlName="password"
       />
 
       <button
@@ -33,10 +38,20 @@
         }}</mat-icon>
       </button>
       <app-input-error
+        ngDefaultControl
         [formControl]="password"
         label="contraseña"
       ></app-input-error>
     </mat-form-field>
-    <button class="w80" mat-raised-button color="primary">Ingresar</button>
+
+    <button
+      type="submit"
+      class="w80"
+      mat-raised-button
+      color="primary"
+      [disabled]="form.invalid"
+    >
+      Ingresar
+    </button>
   </form>
 </div>

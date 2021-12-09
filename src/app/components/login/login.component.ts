@@ -25,10 +25,20 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   get user() {
-    return this.form.get('user')! as FormControl;
+    return this.form?.get('user')! as FormControl;
   }
 
   get password() {
-    return this.form.get('password')! as FormControl;
+    return this.form?.get('password')! as FormControl;
+  }
+
+  submit() {
+    const user = this.form.value.user;
+    const password = this.form.value.password;
+
+    if (this.form.valid) {
+      console.log('Entro');
+      this.form.reset();
+    }
   }
 }
