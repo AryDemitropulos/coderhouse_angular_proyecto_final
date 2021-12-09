@@ -49,19 +49,7 @@
       ${{ movie.price }}
     </button>
   </mat-card-header>
-  <mat-card-content *ngIf="showDetail">
-    <div>
-      <span class="fw-500"> Duración: </span>{{ movie.detail.duration }}min
-    </div>
-
-    <div><span class="fw-500"> Director: </span> {{ getDirector() }}</div>
-    <div class="mb15">
-      <span class="fw-500"> Actores: </span> {{ getActors() }}
-    </div>
-    <p>
-      {{ movie.detail.description }}
-    </p>
-  </mat-card-content>
+  <mat-card-content *ngIf="showDetail"> </mat-card-content>
   <mat-card-actions class="d-flex-center-between">
     <button mat-button (click)="toggleDetail()">
       {{ showDetail ? "Menos" : "Más" }} información
