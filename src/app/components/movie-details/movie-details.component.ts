@@ -8,7 +8,26 @@ import { MovieDetail } from '../../interfaces/MovieDetail';
 })
 export class MovieDetailsComponent implements OnInit {
   @Input() detail: MovieDetail;
+  actors: string[];
+  directors: string[];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.actors = this.getPeopleByType('A');
+    this.directors = this.getPeopleByType('D');
+  }
+
+  getPeopleByType(type: string): string[] {
+    return this.detail.personList
+      .filter((person) => person.Type == type)
+      .map((person) => person.Name);
+  }
+
+  getDirectors() {
+    return this.directors.join(', ');
+  }
+
+  getActors() {
+    return this.actors.join(', ');
+  }
 }

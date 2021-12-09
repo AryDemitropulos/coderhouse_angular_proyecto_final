@@ -1,17 +1,7 @@
-<div class="d-flex justify-content-between pb-1">
-  <div class="text-start fw-500 mr-2">Duración: {{ detail.duration }}min</div>
-  <div>
-    <span class="badge rounded-pill bg-primary">
-      {{ detail.category }}
-    </span>
-  </div>
-</div>
-<div class="movie-title-container">
-  <div class="text-start fw-500 mr-2" *ngFor="let person of detail.personList">
-    {{ person.Type == "D" ? "Director" : "Actor" }}:
-    {{ person.Name }}
-  </div>
-</div>
-<p class="card-text movie-text">
+<div><span class="fw-500"> Duración: </span>{{ detail.duration }}min</div>
+
+<div><span class="fw-500"> Director: </span> {{ getDirectors() }}</div>
+<div class="mb15"><span class="fw-500"> Actores: </span> {{ getActors() }}</div>
+<p>
   {{ detail.description }}
 </p>

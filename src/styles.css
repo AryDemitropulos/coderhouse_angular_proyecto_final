@@ -16,6 +16,11 @@ mat-form-field {
   margin-bottom: 15px;
 }
 
+.jc-between {
+  display: flex !important;
+  justify-content: space-between;
+}
+
 .d-flex-center-between {
   display: flex !important;
   align-items: center;
@@ -49,4 +54,18 @@ mat-form-field {
 
 .mt30 {
   margin-top: 30px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.mr15 {
+  margin-right: 15px;
+}
+
+.not-clickeable {
+  pointer-events: none;
 }

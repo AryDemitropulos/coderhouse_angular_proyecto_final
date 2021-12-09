@@ -1,4 +1,4 @@
-<div class="card text-center">
+<!-- <div class="card text-center">
   <img
     [src]="movie.img"
     class="card-img-top"
@@ -36,3 +36,44 @@
     </button>
   </div>
 </div>
+ -->
+
+<mat-card class="example-card">
+  <img mat-card-image [src]="movie.img" [alt]="movie.name" />
+  <mat-card-header class="jc-between">
+    <div class="mr15">
+      <mat-card-title>{{ movie.name }}</mat-card-title>
+      <mat-card-subtitle>{{ movie.detail.category }}</mat-card-subtitle>
+    </div>
+    <button mat-mini-fab color="accent" class="not-clickeable">
+      ${{ movie.price }}
+    </button>
+  </mat-card-header>
+  <mat-card-content *ngIf="showDetail">
+    <div>
+      <span class="fw-500"> Duración: </span>{{ movie.detail.duration }}min
+    </div>
+
+    <div><span class="fw-500"> Director: </span> {{ getDirector() }}</div>
+    <div class="mb15">
+      <span class="fw-500"> Actores: </span> {{ getActors() }}
+    </div>
+    <p>
+      {{ movie.detail.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="d-flex-center-between">
+    <button mat-button (click)="toggleDetail()">
+      {{ showDetail ? "Menos" : "Más" }} información
+    </button>
+    <button
+      mat-fab
+      [color]="isMovieInCart() ? 'warn' : 'primary'"
+      aria-label="Add or delete from cart"
+      (click)="togleMovieInCart()"
+    >
+      <mat-icon *ngIf="isMovieInCart()">remove_shopping_cart</mat-icon>
+      <mat-icon *ngIf="!isMovieInCart()">add_shopping_cart</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
