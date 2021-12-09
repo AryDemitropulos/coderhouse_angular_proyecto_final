@@ -1,15 +1,3 @@
-<div class="position-relative text-primary">
-  <i class="fa fa-shopping-cart fs-3" aria-hidden="true"></i>
-  <span
-    class="
-      position-absolute
-      top-0
-      translate-middle
-      badge
-      rounded-pill
-      bg-danger
-    "
-  >
-    {{ getNumberOfItemsInCart() }}
-  </span>
-</div>
+<mat-icon [matBadge]="getNumberOfItemsInCart()" matBadgeColor="warn"
+  >shopping_cart</mat-icon
+>
