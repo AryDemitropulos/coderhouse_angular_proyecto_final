@@ -35,7 +35,10 @@ mat-form-field {
   display: flex !important;
   justify-content: space-between;
 }
-
+.al-center {
+  display: flex !important;
+  align-items: center;
+}
 .d-flex-center-between {
   display: flex !important;
   align-items: center;
@@ -49,7 +52,7 @@ mat-form-field {
 }
 
 .h100 {
-  height: 100%;
+  height: calc(100% - 64px);
 }
 
 .w100 {
@@ -62,6 +65,9 @@ mat-form-field {
 
 .p10 {
   padding: 10px;
+}
+.p30 {
+  padding: 30px;
 }
 .pt30 {
   padding-top: 30px;

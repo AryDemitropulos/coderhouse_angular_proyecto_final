@@ -21,6 +21,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { CartIconComponent } from './components/cart-icon/cart-icon.component';
 import { InputErrorComponent } from './components/input-error/input-error.component';
+import { CartWithoutTableComponent } from './views/cart-without-table/cart-without-table.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
     MovieDetailsComponent,
     CartIconComponent,
     InputErrorComponent,
+    CartWithoutTableComponent,
   ],
   imports: [
     BrowserModule,

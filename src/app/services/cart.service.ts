@@ -40,8 +40,8 @@ export class CartService {
   getNumberOfItemsInCart(): number {
     return this.moviesInCart.length;
   }
-  getMovies(): Observable<Movie[]> {
-    return of(this.moviesInCart);
+  getMovies(): Movie[] {
+    return this.moviesInCart;
   }
 
   /*

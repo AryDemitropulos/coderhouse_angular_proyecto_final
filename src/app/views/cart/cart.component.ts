@@ -20,11 +20,11 @@ export class CartComponent implements OnInit {
   }
 
   refresh() {
-    this.cartService.getMovies().subscribe((data: Movie[]) => {
+    /* this.cartService.getMovies().subscribe((data: Movie[]) => {
       this.source.data = data;
       this.movies = data;
       console.log('changed!');
-    });
+    });*/
   }
 
   getMovies() {

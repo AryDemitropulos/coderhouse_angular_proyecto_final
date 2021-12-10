@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
 
 const modulesToExport = [
   CommonModule,
@@ -25,6 +26,7 @@ const modulesToExport = [
   MatMenuModule,
   MatBadgeModule,
   MatTableModule,
+  MatListModule,
 ];
 
 @NgModule({

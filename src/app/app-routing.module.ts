@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { CartComponent } from './views/cart/cart.component';
+import { CartWithoutTableComponent } from './views/cart-without-table/cart-without-table.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CartComponent,
+    component: CartWithoutTableComponent,
   },
   {
     path: 'auth',
@@ -15,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: CartComponent,
+    component: CartWithoutTableComponent,
   },
 ];
 
