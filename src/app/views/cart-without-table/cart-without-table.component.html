@@ -35,7 +35,9 @@
   <div *ngIf="!movies.length" class="d-flex-center-center h100">
     <div class="no-movies">
       <h2>No tienes ninguna pelicula en el carro!!!</h2>
-      <button mat-raised-button color="primary">Volver al Inicio</button>
+      <button mat-raised-button color="primary" routerLink="/home">
+        Volver al Inicio
+      </button>
     </div>
   </div>
 </div>

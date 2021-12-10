@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +15,7 @@ import {
 export class SignUpComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private route: Router) {
     this.form = fb.group({
       name: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
@@ -35,5 +36,14 @@ export class SignUpComponent implements OnInit {
     return this.form?.get('email')! as FormControl;
   }
 
-  submit() {}
+  submit() {
+    if (this.form.valid) {
+      this.form.reset();
+      this.goToHome();
+    }
+  }
+
+  goToHome() {
+    this.route.navigate(['home']);
+  }
 }

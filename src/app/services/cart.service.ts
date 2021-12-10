@@ -18,7 +18,6 @@ export class CartService {
     } else {
       this.addMovie(id);
     }
-    this;
   }
   isMovieInCart(id: string) {
     return this.getMoviesId().includes(id);
@@ -54,5 +53,9 @@ export class CartService {
 
   getMoviesId(): string[] {
     return this.moviesInCart.map((movie) => movie.id);
+  }
+
+  cleanCart() {
+    this.moviesInCart = [];
   }
 }

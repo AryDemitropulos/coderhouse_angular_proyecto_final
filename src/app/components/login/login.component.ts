@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   hidePassword: boolean = true;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.form = fb.group({
       user: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -37,8 +38,12 @@ export class LoginComponent implements OnInit {
     const password = this.form.value.password;
 
     if (this.form.valid) {
-      console.log('Entro');
       this.form.reset();
+      this.goToHome();
     }
+  }
+
+  goToHome() {
+    this.router.navigate(['home']);
   }
 }

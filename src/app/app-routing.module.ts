@@ -7,8 +7,8 @@ import { CartWithoutTableComponent } from './views/cart-without-table/cart-witho
 
 const routes: Routes = [
   {
-    path: '',
-    component: CartWithoutTableComponent,
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'auth',
@@ -18,6 +18,8 @@ const routes: Routes = [
     path: 'cart',
     component: CartWithoutTableComponent,
   },
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  { path: '**', component: AuthenticationComponent },
 ];
 
 @NgModule({
