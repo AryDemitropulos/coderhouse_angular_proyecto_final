@@ -7,7 +7,7 @@ import { CartComponent } from './views/cart/cart.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: CartComponent,
   },
   {
     path: 'auth',

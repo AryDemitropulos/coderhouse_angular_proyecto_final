@@ -19,7 +19,7 @@ export class MoviesService {
       }) => {
         return {
           name,
-          price: (Math.floor(Math.random() * 50) + 1).toString(),
+          price: Math.floor(Math.random() * 50) + 1,
           id,
           img: URLPoster,
           detail: {
