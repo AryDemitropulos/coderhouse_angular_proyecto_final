@@ -16,7 +16,9 @@ export class MoviesService {
         duration,
         category,
         personList,
+        URLTrailerYoutube,
       }) => {
+        console.log('mapeando');
         return {
           name,
           price: Math.floor(Math.random() * 50) + 1,
@@ -27,10 +29,17 @@ export class MoviesService {
             duration,
             category,
             personList,
+            trailer: URLTrailerYoutube.replace('watch?v=', 'embed/').split(
+              '&t='
+            )[0],
           },
         };
       }
     );
+  }
+
+  getMovie(id: string): Movie {
+    return this.getMovies().find((el) => el.id == id)!;
   }
   constructor() {}
 }

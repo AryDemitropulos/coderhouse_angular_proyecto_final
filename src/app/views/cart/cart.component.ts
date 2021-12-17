@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Movie } from '../../interfaces/Movie';
 import { MatTableDataSource } from '@angular/material/table';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -9,27 +10,30 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'price', 'actions'];
   movies: Movie[] = [];
-  moviesId: string[];
   source = new MatTableDataSource<Movie>([]);
+  subscription: Subscription;
+
+  displayedColumns: string[] = ['image', 'name', 'price', 'actions'];
+
   constructor(private cartService: CartService) {}
+
   ngOnInit(): void {
-    this.source = this.source;
-    this.refresh();
+    this.refreshMovies(this.cartService.getMovies());
+    this.subscription = this.cartService.getMovies$().subscribe((movies) => {
+      this.refreshMovies(movies);
+    });
   }
 
-  refresh() {
-    /* this.cartService.getMovies().subscribe((data: Movie[]) => {
-      this.source.data = data;
-      this.movies = data;
-      console.log('changed!');
-    });*/
+  refreshMovies(movies: Movie[]) {
+    this.movies = movies;
+    this.source.data = movies;
   }
 
-  getMovies() {
-    this.source.data = this.movies;
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
+
   getTotal() {
     return this.movies
       .map((movie) => movie.price)
@@ -38,7 +42,6 @@ export class CartComponent implements OnInit {
   }
 
   deleteFromCart(id: string) {
-    console.log('test');
     this.cartService.deleteFromCart(id);
   }
 }
