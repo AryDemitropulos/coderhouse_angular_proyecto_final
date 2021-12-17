@@ -122,7 +122,7 @@ export default [
     category: 'Drama',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/ea6b0544477fd93e924d8775db761ef1.jpg',
-    URLTrailerYoutube: 'https://youtu.be/Ci39Yl_OlT0',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/Ci39Yl_OlT0',
     personList: [
       { Type: 'A', Name: 'Mauricio Di Yorio' },
       { Type: 'A', Name: 'Umbra Colombo' },
@@ -179,7 +179,7 @@ export default [
     category: 'Comedia',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/dc953b48fd931e18cc2f6d5237a8cf83.jpg',
-    URLTrailerYoutube: 'https://youtu.be/GzqYoI8x7Lc',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/GzqYoI8x7Lc',
     personList: [
       { Type: 'A', Name: 'Jorgelina Aruzzi' },
       { Type: 'A', Name: 'Roberto Moldavsky' },
@@ -197,7 +197,7 @@ export default [
     category: 'Aventuras',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/385cdf976087998bf59c848ef48e5cb2.jpg',
-    URLTrailerYoutube: 'https://youtu.be/GtyAO-VP0tw',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/GtyAO-VP0tw',
     personList: [
       { Type: 'A', Name: 'Annie  Potts' },
       { Type: 'A', Name: 'Carrie Coon' },
@@ -219,7 +219,7 @@ export default [
     category: 'Recital',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/70aea648d5305d6e1a2e82bda2acffde.jpg',
-    URLTrailerYoutube: 'https://youtu.be/Ky3mnWGC_rA',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/Ky3mnWGC_rA',
     personList: [{ Type: 'D', Name: 'Nicolas Jack Davies' }],
   },
   {
@@ -233,7 +233,7 @@ export default [
     category: 'Aventuras',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/1bc84ab84cd6aa676f96f9171b4cbac8.jpg',
-    URLTrailerYoutube: 'https://youtu.be/uwM2oPGQMl4',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/uwM2oPGQMl4',
     personList: [
       { Type: 'A', Name: 'Daniel  Radcliffe' },
       { Type: 'A', Name: 'Emma Watson' },
@@ -271,7 +271,7 @@ export default [
     category: 'Biografia',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/d02ecf1f10b30c87ec48ebfb55eec56d.jpg',
-    URLTrailerYoutube: 'https://youtu.be/Dy4JNr9gs7I',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/Dy4JNr9gs7I',
     personList: [
       { Type: 'A', Name: 'Adam Driver' },
       { Type: 'A', Name: 'Al  Pacino' },
@@ -292,7 +292,7 @@ export default [
     category: 'Comedia',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/5d25388968e119b91223b8ca70d4a528.jpg',
-    URLTrailerYoutube: 'https://youtu.be/YFawVGHq-aE',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/YFawVGHq-aE',
     personList: [
       { Type: 'A', Name: 'Adrien Brody' },
       { Type: 'A', Name: 'Benicio Del Toro' },
@@ -313,7 +313,7 @@ export default [
     category: 'Animación',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/7911ad12df07729098cf88c27f55c35c.jpg',
-    URLTrailerYoutube: 'https://youtu.be/8tpdGktztuM',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/8tpdGktztuM',
     personList: [{ Type: 'D', Name: 'Holer Tappe' }],
   },
   {
@@ -346,7 +346,7 @@ export default [
     category: 'Drama',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/7b2ae4bfae66481828eff0a6e9c6efe7.jpg',
-    URLTrailerYoutube: ' https://youtu.be/W5ubJIujZMs',
+    URLTrailerYoutube: ' https://www.youtube.com/watch?v=/W5ubJIujZMs',
     personList: [
       { Type: 'A', Name: 'Luis Machin' },
       { Type: 'A', Name: 'Mario  Alarcon' },
@@ -401,7 +401,7 @@ export default [
     category: 'Biografia',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/9db3591a90acadc1ea612ebf3ae48a61.jpg',
-    URLTrailerYoutube: 'https://youtu.be/oEpwtHkw34U',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/oEpwtHkw34U',
     personList: [
       { Type: 'A', Name: 'Demi Singleton' },
       { Type: 'A', Name: 'Saniyya Sidney' },
@@ -420,7 +420,7 @@ export default [
     category: 'Acción',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/379e5c3f6bc5e503fcaf70ebf3db213f.jpg',
-    URLTrailerYoutube: 'https://youtu.be/cc_ismJiV-0',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/cc_ismJiV-0',
     personList: [
       { Type: 'A', Name: 'Laurence  Fishburne' },
       { Type: 'A', Name: 'Liam Neeson' },
@@ -456,7 +456,7 @@ export default [
     category: 'Acción',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/fa06752420f61cc2845a65479cdc2745.jpg',
-    URLTrailerYoutube: 'https://youtu.be/r6t0czGbuGI',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/r6t0czGbuGI',
     personList: [
       { Type: 'A', Name: '* Zendaya' },
       { Type: 'A', Name: 'Benedict Cumberbatch' },
@@ -475,7 +475,7 @@ export default [
     category: 'Acción',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/7710d7c839d34493a070be95bda37a85.jpg',
-    URLTrailerYoutube: 'https://youtu.be/F4Ygcigj0Gk',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/F4Ygcigj0Gk',
     personList: [
       { Type: 'A', Name: 'Tom Hardy' },
       { Type: 'A', Name: 'Woody Harrelson' },
@@ -493,7 +493,7 @@ export default [
     category: 'Documental',
     URLPoster:
       'https://static.cinemarkhoyts.com.ar/Images/Posters/5022f89fd23497721bcd12f8765bcece.jpg',
-    URLTrailerYoutube: 'https://youtu.be/8FK1bAnqM9Y',
+    URLTrailerYoutube: 'https://www.youtube.com/watch?v=/8FK1bAnqM9Y',
     personList: [{ Type: 'D', Name: 'Jorge Pareja' }],
   },
   {
