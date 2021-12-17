@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { CartComponent } from './views/cart/cart.component';
 import { CartWithoutTableComponent } from './views/cart-without-table/cart-without-table.component';
+import { MovieDetailComponent } from './views/movie-detail/movie-detail.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,13 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: CartWithoutTableComponent,
+    component: CartComponent,
   },
+  {
+    path: 'movie/:id',
+    component: MovieDetailComponent,
+  },
+  { path: 'movie', redirectTo: '/home', pathMatch: 'full' },
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: '**', component: AuthenticationComponent },
 ];
