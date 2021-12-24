@@ -1,3 +1,4 @@
+<app-loading></app-loading>
 <div class="u-container h100">
   <table
     mat-table
@@ -54,7 +55,7 @@
       class="example-first-footer-row"
     ></tr>
   </table>
-  <div *ngIf="!movies.length" class="d-flex-center-center h100">
+  <div *ngIf="noMovies" class="d-flex-center-center h100">
     <div class="no-movies">
       <h2>No tienes ninguna pelicula en el carro!!!</h2>
       <button mat-raised-button color="primary" routerLink="/home">

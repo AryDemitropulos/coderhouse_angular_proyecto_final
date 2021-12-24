@@ -13,6 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const modulesToExport = [
   CommonModule,
@@ -27,6 +28,7 @@ const modulesToExport = [
   MatBadgeModule,
   MatTableModule,
   MatListModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({

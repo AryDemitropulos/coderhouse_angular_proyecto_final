@@ -20,6 +20,19 @@ mat-form-field {
   display: none !important;
 }
 
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e7bc71c;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
 .u-container {
   display: flex;
   flex-direction: column;

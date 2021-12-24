@@ -1,8 +1,10 @@
+import { LoadingInterceptor } from './interceptors/loading-interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +25,7 @@ import { CartIconComponent } from './components/cart-icon/cart-icon.component';
 import { InputErrorComponent } from './components/input-error/input-error.component';
 import { CartWithoutTableComponent } from './views/cart-without-table/cart-without-table.component';
 import { MovieDetailComponent } from './views/movie-detail/movie-detail.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { MovieDetailComponent } from './views/movie-detail/movie-detail.componen
     InputErrorComponent,
     CartWithoutTableComponent,
     MovieDetailComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,8 +52,15 @@ import { MovieDetailComponent } from './views/movie-detail/movie-detail.componen
     AngularMaterialModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
