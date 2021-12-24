@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../interfaces/User';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +12,21 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   show: boolean;
-  subscription: Subscription;
-  constructor(private router: Router, private service: CartService) {}
+  user: User;
+  subscriptionUser: Subscription;
+  subscriptionRouter: Subscription;
+  constructor(
+    private router: Router,
+    private service: CartService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.subscription = this.router.events.subscribe((event: Event) => {
+    this.subscriptionUser = this.authService
+      .getUser()
+      .subscribe((user) => (this.user = user));
+    console.log('USER HEADER', this.user);
+    this.subscriptionRouter = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.show = event.url != '/auth' && event.url != '/';
         if (!this.show) {
@@ -24,7 +36,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void {
-    if (this.subscription) this.subscription.unsubscribe();
+    if (this.subscriptionRouter) this.subscriptionRouter.unsubscribe();
+    if (this.subscriptionUser) this.subscriptionUser.unsubscribe();
   }
 
   goToHome() {
