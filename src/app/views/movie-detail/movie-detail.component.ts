@@ -15,7 +15,7 @@ export class MovieDetailComponent implements OnInit {
   movieID: string = '';
   movie: Movie;
   safeURL: SafeResourceUrl;
-
+  loading: boolean = true;
   constructor(
     private movieService: MoviesService,
     private cartService: CartService,
@@ -30,10 +30,13 @@ export class MovieDetailComponent implements OnInit {
 
   getMovie(id: string) {
     console.log('Buscando...');
-    this.movie = this.movieService.getMovie(id);
-    this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.movie.detail.trailer
-    );
+    this.movieService.getMovie(id).subscribe((movie) => {
+      this.movie = movie;
+      this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.movie.detail.trailer
+      );
+      this.loading = false;
+    });
   }
 
   isMovieInCart(): boolean {

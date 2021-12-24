@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -6,17 +6,23 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   form: FormGroup;
   hidePassword: boolean = true;
-
-  constructor(private fb: FormBuilder, private router: Router) {
+  subscripcion: Subscription;
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.form = fb.group({
       user: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -24,6 +30,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    if (this.subscripcion) this.subscripcion.unsubscribe();
+  }
 
   get user() {
     return this.form?.get('user')! as FormControl;
@@ -34,15 +44,20 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    const user = this.form.value.user;
-    const password = this.form.value.password;
-
     if (this.form.valid) {
-      this.form.reset();
-      this.goToHome();
+      this.subscripcion = this.authService
+        .login({
+          user: this.user.value,
+          password: this.password.value,
+        })
+        .subscribe((user) => {
+          console.log('LOGIN: ', user);
+          this.form.reset();
+          this.authService.setUser(user);
+          this.goToHome();
+        });
     }
   }
-
   goToHome() {
     this.router.navigate(['home']);
   }

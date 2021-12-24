@@ -12,6 +12,6 @@ export interface RawMovie {
 }
 
 export interface PersonList {
-  Type: string;
-  Name: string;
+  type: string;
+  name: string;
 }

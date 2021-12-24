@@ -8,8 +8,8 @@ import { Observable, of, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  private moviesInCart: Movie[] = [];
-  private movies$: Subject<Movie[]> = new Subject<Movie[]>();
+  private moviesInCart: String[] = [];
+  private movies$: Subject<String[]> = new Subject<String[]>();
 
   constructor(private moviesService: MoviesService) {}
 
@@ -21,20 +21,17 @@ export class CartService {
     }
   }
   isMovieInCart(id: string) {
-    return this.getMoviesId().includes(id);
+    return this.moviesInCart.includes(id);
   }
 
   addMovie(id: string) {
-    const movie = this.moviesService
-      .getMovies()
-      .find((movie) => movie.id == id);
-    if (movie) {
-      this.moviesInCart.push(movie);
+    if (!this.moviesInCart.includes(id)) {
+      this.moviesInCart.push(id);
       this.movies$.next(this.moviesInCart);
     }
   }
   deleteFromCart(id: string) {
-    const index = this.getMoviesId().indexOf(id);
+    const index = this.moviesInCart.indexOf(id);
     if (index > -1) {
       this.moviesInCart.splice(index, 1);
       this.movies$.next(this.moviesInCart);
@@ -44,23 +41,12 @@ export class CartService {
   getNumberOfItemsInCart(): number {
     return this.moviesInCart.length;
   }
-  getMovies(): Movie[] {
+  getMovies(): String[] {
     return this.moviesInCart;
   }
 
-  getMovies$(): Observable<Movie[]> {
+  getMovies$(): Observable<String[]> {
     return this.movies$.asObservable();
-  }
-  /*
-  getMovies(): Movie[] {
-    //Posiblemente tenga que trabajar con observables... no estaria funcionando este metodo, no se actualiza
-    /*return this.moviesService
-      .getMovies()
-      .filter((movie) => this.moviesInCart.includes(movie.id));
-  }*/
-
-  getMoviesId(): string[] {
-    return this.moviesInCart.map((movie) => movie.id);
   }
 
   cleanCart() {

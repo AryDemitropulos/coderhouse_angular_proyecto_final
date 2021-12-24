@@ -1,19 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Movie } from '../../interfaces/Movie';
+import { MoviesService } from '../../services/movies.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart-without-table',
   templateUrl: './cart-without-table.component.html',
   styleUrls: ['./cart-without-table.component.css'],
 })
-export class CartWithoutTableComponent implements OnInit {
+export class CartWithoutTableComponent implements OnInit, OnDestroy {
   movies: Movie[] = [];
-  moviesId: string[];
-  constructor(private cartService: CartService) {
-    this.movies = cartService.getMovies();
+  moviesId: String[];
+  subscrition: Subscription;
+  constructor(
+    private cartService: CartService,
+    private movieService: MoviesService
+  ) {}
+  ngOnInit(): void {
+    this.moviesId = this.cartService.getMovies();
+    this.subscrition = this.movieService
+      .getFilterMovies(this.moviesId)
+      .subscribe((movies) => (this.movies = movies));
   }
-  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.subscrition.unsubscribe();
+  }
 
   deleteFromCart(id: string) {
     console.log('test');

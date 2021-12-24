@@ -15,12 +15,13 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.actors = this.getPeopleByType('A');
     this.directors = this.getPeopleByType('D');
+    console.log(this.detail);
   }
 
   getPeopleByType(type: string): string[] {
     return this.detail.personList
-      .filter((person) => person.Type == type)
-      .map((person) => person.Name);
+      .filter((person) => person.type == type)
+      .map((person) => person.name);
   }
 
   getDirectors() {

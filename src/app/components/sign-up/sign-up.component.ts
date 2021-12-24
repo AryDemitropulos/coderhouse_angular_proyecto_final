@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -6,16 +6,22 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, OnDestroy {
   form: FormGroup;
-
-  constructor(private fb: FormBuilder, private route: Router) {
+  subscription: Subscription;
+  constructor(
+    private fb: FormBuilder,
+    private route: Router,
+    private authService: AuthService
+  ) {
     this.form = fb.group({
       name: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
@@ -24,6 +30,9 @@ export class SignUpComponent implements OnInit {
   }
   ngOnInit(): void {}
 
+  ngOnDestroy(): void {
+    if (this.subscription) this.subscription.unsubscribe();
+  }
   get name() {
     return this.form?.get('name')! as FormControl;
   }
@@ -38,8 +47,17 @@ export class SignUpComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      this.form.reset();
-      this.goToHome();
+      this.subscription = this.authService
+        .register({
+          name: this.name.value,
+          lastname: this.lastname.value,
+          email: this.email.value,
+        })
+        .subscribe((user) => {
+          this.form.reset();
+          this.authService.setUser(user);
+          this.goToHome();
+        });
     }
   }
 
