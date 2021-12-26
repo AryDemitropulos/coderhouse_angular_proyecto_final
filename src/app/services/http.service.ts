@@ -30,7 +30,6 @@ export class HttpService {
   }
 
   put<Type>(path: string, object: any): Observable<Type> {
-    console.log('PUT');
     return this.http.put<Type>(this.root + path, object);
   }
 }

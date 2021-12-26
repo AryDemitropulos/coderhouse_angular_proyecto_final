@@ -26,6 +26,6 @@ export class MoviesService {
 
   addMovie() {
     console.log('ADDING MOVIE');
-    return this.http.put<Movie>('/movies/', {});
+    return this.http.post<Movie>('/movies/', {});
   }
 }
