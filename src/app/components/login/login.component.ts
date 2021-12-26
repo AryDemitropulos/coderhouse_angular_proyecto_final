@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit, OnDestroy {
           password: this.password.value,
         })
         .subscribe((user) => {
-          console.log('LOGIN: ', user);
           this.form.reset();
           this.authService.setUser(user);
           this.goToHome();

@@ -26,6 +26,7 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
 import { CartWithoutTableComponent } from './views/cart-without-table/cart-without-table.component';
 import { MovieDetailComponent } from './views/movie-detail/movie-detail.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { NewMovieComponent } from './views/new-movie/new-movie.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     CartWithoutTableComponent,
     MovieDetailComponent,
     LoadingComponent,
+    NewMovieComponent,
   ],
   imports: [
     BrowserModule,

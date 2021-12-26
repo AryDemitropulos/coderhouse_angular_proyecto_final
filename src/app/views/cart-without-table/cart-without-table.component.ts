@@ -29,7 +29,6 @@ export class CartWithoutTableComponent implements OnInit, OnDestroy {
   }
 
   deleteFromCart(id: string) {
-    console.log('test');
     this.cartService.deleteFromCart(id);
   }
   getTotal() {

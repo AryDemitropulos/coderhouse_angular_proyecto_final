@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.subscriptionUser = this.authService
       .getUser()
       .subscribe((user) => (this.user = user));
-    console.log('USER HEADER', this.user);
     this.subscriptionRouter = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.show = event.url != '/auth' && event.url != '/';
@@ -42,5 +41,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   goToHome() {
     this.router.navigate(['home']);
+  }
+
+  isUserAdmin() {
+    return this.user && this.user.role == 'ADMIN';
   }
 }

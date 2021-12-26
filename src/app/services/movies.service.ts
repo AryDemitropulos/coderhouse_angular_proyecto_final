@@ -23,4 +23,9 @@ export class MoviesService {
   getFilterMovies(ids: String[]): Observable<Movie[]> {
     return this.http.get<Movie[]>('/movies/filter?ids=' + ids.toString());
   }
+
+  addMovie() {
+    console.log('ADDING MOVIE');
+    return this.http.put<Movie>('/movies/', {});
+  }
 }

@@ -22,7 +22,6 @@ export class AuthService {
   }
 
   setUser(user: User) {
-    console.log('SETTING USER', user);
     this.user = user;
     this.user$.next(this.user);
   }

@@ -5,6 +5,7 @@ import { HomeComponent } from './views/home/home.component';
 import { CartComponent } from './views/cart/cart.component';
 import { CartWithoutTableComponent } from './views/cart-without-table/cart-without-table.component';
 import { MovieDetailComponent } from './views/movie-detail/movie-detail.component';
+import { NewMovieComponent } from './views/new-movie/new-movie.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'movie/:id',
     component: MovieDetailComponent,
+  },
+  {
+    path: 'newMovie',
+    component: NewMovieComponent,
   },
   { path: 'movie', redirectTo: '/home', pathMatch: 'full' },
   { path: '', redirectTo: '/auth', pathMatch: 'full' },

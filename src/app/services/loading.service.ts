@@ -17,7 +17,6 @@ export class LoadingService {
   }
 
   setLoading(newValue: boolean): void {
-    console.log('SET LOADING', newValue);
     this.loading = newValue;
     this.loading$.next(this.loading);
   }
